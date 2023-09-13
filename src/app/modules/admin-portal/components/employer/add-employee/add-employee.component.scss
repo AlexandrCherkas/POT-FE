@@ -1,0 +1,111 @@
+@import "constants.scss";
+
+.user-information-container {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 4%;
+  padding-bottom: 3%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+}
+
+.user-information-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+.inner-fieldset {
+  width: 100%;
+}
+
+.permissions-slider {
+  color: $white;
+  padding: 3%;
+}
+
+.form-add {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-between;
+  width: 80%;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.input-fields-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.security-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2% 5% 0 2%;
+}
+
+.add-button {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: 3px;
+  border: none;
+  width: 15%;
+  height: 35px;
+  font-weight: 600;
+  align-self: start;
+  margin-left: 5%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+mat-form-field {
+  width: 44%;
+}
+
+mat-label {
+  color: $white-blue;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+  align-self: center;
+}
+
+.mat-input-element {
+  color: $white;
+}
+
+::ng-deep.mat-input-element::placeholder{
+  color: $white-blue;
+}
+
+::ng-deep.mat-form-field-underline{
+  background-color: $white-blue !important;
+}
+
+::ng-deep.mat-form-field-ripple{
+  background-color: $white !important;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

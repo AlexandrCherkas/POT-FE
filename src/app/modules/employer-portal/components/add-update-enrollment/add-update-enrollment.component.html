@@ -1,0 +1,34 @@
+<h2 mat-dialog-title> {{"add-update-enrollment" | translate}} </h2>
+
+<div mat-dialog-content class="container">
+  <form [formGroup]="enrollmentFormGroup" >
+
+    <mat-form-field appearance="fill" class="name-input">
+      <mat-label>{{ "plan" | translate }}</mat-label>
+      <mat-select formControlName="name" name="name" type="object" (ngModelChange)="enableInput()" class="mat-spec">
+        <mat-option value="" disabled > Select a plan </mat-option>
+        <mat-option *ngFor="let plan of plans" [value]="plan" >{{plan.name}} </mat-option>
+      </mat-select>
+      <mat-error> {{"error-plans" | translate}} </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="election-input">
+      <mat-label>{{ "election" | translate }}</mat-label>
+      <input  matInput type="number" formControlName="election" placeholder="Ex. $100"/>
+      <mat-error *ngIf="enrollmentFormGroup.get('election').hasError('min')"> {{"error-election-min" | translate}} </mat-error>
+      <mat-error *ngIf="enrollmentFormGroup.get('election').hasError('required')"> {{"error-election" | translate}} </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="contribution-input">
+      <mat-label>{{ "contribution" | translate }}</mat-label>
+      <input  matInput type="number"  formControlName="contribution"/>
+      <mat-error> {{"error-contribution" | translate}} </mat-error>
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions class="actions-btn">
+    <button  (click)="onConfirmClick()" >{{"close" | translate}}</button>
+    <button class="submit-btn" (click)="submit()" >{{"submit" | translate}}</button>
+</div>

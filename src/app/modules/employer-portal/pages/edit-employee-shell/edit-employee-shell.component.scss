@@ -1,0 +1,15 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  opacity: 1 !important;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}

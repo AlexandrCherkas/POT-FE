@@ -1,0 +1,96 @@
+@import 'constants.scss';
+
+.admin-portal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.portal-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: $white;
+  width: 80%;
+}
+
+.title-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify
+}
+
+.title-description-main{
+  font-size: 2.3em;
+  margin: 0;
+}
+
+nav{
+  margin-top: 20px;
+  width: 75%;
+}
+
+.mat-tab-link{
+  width: 25%;
+  border: 3px solid $white;
+  border-bottom: none;
+  border-radius: 15px 15px 0px 0px;
+  color: $white;
+  opacity: 1 !important;
+  height: 40px;
+}
+
+
+.white {
+  background-color: $white;
+  color: $primary-blue;
+}
+
+::ng-deep app-employer {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+::ng-deep app-claims{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+::ng-deep app-claim-info{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+
+::ng-deep app-manage-plans{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+::ng-deep app-add-insurance-plan{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+::ng-deep app-edit-plan{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+
+@media all and (max-width: 770px){
+
+  img{
+    display: none;
+    transition: 0.5s;
+  }
+
+}

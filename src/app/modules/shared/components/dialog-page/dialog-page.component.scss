@@ -1,0 +1,28 @@
+@import 'constants.scss';
+
+button{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: 13px;
+  border: none;
+  width: 120px;
+  height: 35px;
+  align-self: flex-end;
+  font-weight: bold;
+  margin-top: 5%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+h2{
+ color: #024c63;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+}

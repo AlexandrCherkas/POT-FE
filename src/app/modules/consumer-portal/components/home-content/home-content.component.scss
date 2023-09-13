@@ -1,0 +1,17 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  padding: 3%;
+}
+
+p{
+  color: $white;
+}

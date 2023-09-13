@@ -1,0 +1,120 @@
+@import 'constants.scss';
+
+.admin-portal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.portal-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: $white;
+  width: 80%;
+}
+
+.title-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 3%;
+}
+
+.title-description-main{
+  font-size: 2.3em;
+  margin: 0;
+}
+
+.home-image {
+  height: fit-content;
+}
+
+nav{
+  margin-top: 20px;
+  width: auto;
+}
+
+.white {
+  background-color: $white;
+  color: $primary-blue;
+}
+
+mat-button-toggle-group{
+  border: none;
+}
+
+.mat-button-toggle-checked{
+  background-color: $secondary-blue;
+  color: $white
+}
+
+.mat-button-toggle {
+  border: 2px solid none;
+  border-radius: $border-radius-btns;
+  margin: 10px;
+  width: auto;
+}
+.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+  border-left: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: $white;
+  color: $secondary-blue;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: auto;
+  height: 44px;
+  align-self: self-end;
+  font-weight: bold;
+  padding: 0 8%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+  margin-right: 3%;
+}
+
+::ng-deep app-home-content{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+::ng-deep app-enrollments{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+::ng-deep app-claims{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+::ng-deep app-add-claim{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+
+
+@media all and (max-width: 770px){
+
+  img{
+    display: none;
+    transition: 0.5s;
+  }
+
+}
+

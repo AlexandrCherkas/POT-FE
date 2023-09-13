@@ -1,0 +1,138 @@
+@import 'constants.scss';
+
+mat-paginator {
+  border: none;
+  box-shadow: none !important;
+  background-color: transparent;
+}
+
+::ng-deep .mat-paginator-outer-container{
+  border: none;
+  background-color: transparent;
+}
+
+.update-employer-btn{
+  display: flex;
+  margin-left: auto;
+  transition: $transform-btn-time;
+}
+
+.update-employer-btn:hover{
+  transition: $transform-btn-time;
+  transform: $transform-btn-scale;
+}
+
+
+.container {
+  position: relative;
+  margin-bottom: 3%;
+}
+
+.table-container {
+  position: relative;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+mat-table{
+  border-radius: 30px
+}
+
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rate-limit-reached {
+  max-width: 360px;
+  text-align: center;
+}
+
+ .mat-header-row{
+  background-color: $secondary-blue ;
+}
+
+td{
+  color: #00546F;
+  font-size: 16px
+}
+th, tr{
+  color: $white;
+  font-size: 16px;
+}
+
+tr.mat-row{
+  height: $table-tr-height;
+  transition: $transform-btn-time;
+  &:hover {
+    transition: $transform-btn-time ;
+    background-color: wheat;
+  }
+}
+
+tr:nth-child(2n) {
+	background-color:$white-blue;
+}
+
+mat-paginator{
+  color: $white;
+  font-size: 15px;
+}
+
+.mat-button-wrapper{
+  color: $white;
+}
+
+::ng-deep .mat-button-wrapper{
+  color: $white;
+}
+
+::ng-deep .mat-select-arrow{
+  color: $white;
+}
+::ng-deep .mat-select-min-line{
+  color: $white;
+}
+::ng-deep .mat-sort-header-arrow{
+  color: $white;
+}
+
+.mat-column-consumer-firstName,
+.mat-column-employer-companyName,
+.mat-column-package-startDate,
+.mat-column-package-name,
+.mat-column-amount {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}
+
+.mat-column-claimNumber{
+  cursor: pointer;
+  width: auto;
+  border-right: 2px solid $white;
+}
+
+.mat-column-isApproved{
+  width: auto;
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}
+
+

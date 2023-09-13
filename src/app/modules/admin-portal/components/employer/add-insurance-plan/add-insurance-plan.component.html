@@ -1,0 +1,115 @@
+<div class="container-main">
+  <div class="content">
+
+    <div class="container-title">
+      <ng-container *ngIf="employerName">
+        <label class="label-employer-name"> {{ "employer-administration-for" | translate }} {{employerName}}</label>
+      </ng-container>
+      <button class="select-employer-btn" (click)="redirectToEmployers()">{{ "select-different-employer" | translate }}</button>
+    </div>
+
+    <table class="container-date" [formGroup]="packageFormGroup" novalidate>
+
+      <fieldset class="general-container">
+        <legend class="general-h3">{{"general" | translate }}</legend>
+
+        <div class="date-row">
+
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "plan-start-date" | translate }}</mat-label>
+            <input matInput [matDatepicker]="start" name="startDate" formControlName="startDate" >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+            <mat-datepicker #start></mat-datepicker>
+            <mat-error *ngIf="packageFormGroup.controls['startDate'].errors?.['required']">{{ "error-plan-start-date" | translate }} </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "plan-end-date" | translate }}</mat-label>
+            <input matInput [matDatepicker]="end" name="endDate" formControlName="endDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+            <mat-datepicker #end></mat-datepicker>
+            <mat-error *ngIf="packageFormGroup.controls['endDate'].errors?.['required']"> {{ "error-plan-end-date" | translate }} </mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="payroll-row">
+
+          <mat-form-field class="select-payrollFrequency"  appearance="fill">
+            <mat-label>{{ "payroll-frequency" | translate }}</mat-label>
+            <mat-select  formControlName="payrollFrequency" name="payrollFrequency">
+              <mat-option *ngFor="let frequency of payrollFrequencyArray" [value]="frequency">
+                {{frequency}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="packageFormGroup.controls['payrollFrequency'].errors?.['required']"> {{ "error-payroll-frequency" | translate }} </mat-error>
+          </mat-form-field>
+
+          <mat-error class="date-error" *ngIf="packageFormGroup.hasError('mismatch')"> {{ "error-difference-date" | translate }} </mat-error>
+
+        </div>
+
+      </fieldset>
+
+      <div class="container-select-plan">
+
+        <mat-form-field class="select-plan" appearance="fill" >
+          <mat-label>{{ "plans" | translate }}</mat-label>
+          <mat-select formControlName="type" name="type">
+            <mat-option *ngFor="let type of typesOfPackages" [value]="type">
+              {{type}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="packageFormGroup.controls['type'].errors?.['required']"> {{ "error-plans" | translate }} </mat-error>
+        </mat-form-field>
+
+        <button class="add-plan-btn" (click)="addPlan()" [disabled]="updatePage">{{ "add" | translate }}</button>
+
+      </div>
+
+    </table>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> {{ "name" | translate }} </th>
+        <td mat-cell *matCellDef="let row"> {{row.name | changeEmptyValue }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> {{ "type" | translate }} </th>
+        <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="contribution">
+        <th mat-header-cell *matHeaderCellDef> {{ "contribution" | translate }} </th>
+        <td mat-cell *matCellDef="let row"> {{row.contribution | changeEmptyValue}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let row">
+          <button class="edit-plan-btn" (click)="editPackage()"> {{ "edit" | translate }}</button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <div class="btn-container">
+      <button class="cancel-plan-btn"  (click)="cancel()" > {{ "cancel" | translate }}  </button>
+      <ng-container *ngIf="updatePage">
+        <button class="submit-plan-btn"  (click)="update()" > {{ "update" | translate }}  </button>
+      </ng-container>
+      <ng-container *ngIf="!updatePage">
+        <button class="submit-plan-btn"  (click)="submit()" > {{ "submit" | translate }} </button>
+      </ng-container>
+    </div>
+
+  </div>
+</div>

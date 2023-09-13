@@ -1,0 +1,111 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  width: 100% ;
+  flex-direction: column;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+  margin-bottom: 6%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  margin: 5%;
+}
+
+.claim-details-container {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  margin-top: 12px;
+  margin-bottom: 3%;
+  width: 95%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+  padding: 3%;
+
+}
+
+.claim-details-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+.claim-table-data{
+  width: 50%;
+}
+
+.receipt-container{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.row-one{
+  width: 130px;
+  text-align: right;
+}
+.row-two{
+  width: 170px;
+  padding-left: 1%;
+  background-color: $secondary-blue-transparent;
+
+}
+
+h3, td{
+  color: $white;
+}
+
+label{
+  margin-bottom: 20px;
+  color: $white;
+}
+
+.btn-container-one{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.btn-container-two{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.approve-claim-btn, .deny-claim-btn, .cancel-claim-btn{
+  margin-right: 20px;
+}
+
+.approve-claim-btn, .deny-claim-btn, .cancel-claim-btn {
+  cursor: pointer;
+  background-color: $white ;
+  color:  $secondary-blue;
+  border-radius: $border-radius-small-btns;
+  border: none;
+  width: 120px;
+  height: 37px;
+  align-self: flex-start;
+  font-weight: bold;
+  margin-bottom: 1%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+mat-slide-toggle{
+  color: $white;
+}

@@ -1,0 +1,52 @@
+@import "constants.scss";
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  place-content: center;
+  margin-top: 3%;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  color: $white;
+  font-weight: $font-weight-container-headings;
+}
+
+.select-different-employer-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: 30px;
+  height: $add-employer-btn-height;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container-user-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+}

@@ -1,0 +1,33 @@
+
+<div class="container-main">
+  <div class="inner-container">
+    <label class="logo-text">{{"upload-file" | translate}}:</label>
+    <div class="file-input">
+      <div class="input-and-bottom-text">
+        <input
+          type="text"
+          disabled
+          class="display-file-input"
+          value="{{ fileName }}"
+        />
+        <p class="bottom-text">{{"locate-file" | translate}}</p>
+        <button class="import-btn" (click)="import()">{{"import" | translate}}</button>
+      </div>
+
+      <input
+        (change)="fileChange($event)"
+        class="upload-logo-input"
+        type="file"
+        name="file"
+        id="file"
+        style="display: none"
+        #fileInput
+      />
+      <button class="browse-btn" (click)="fileInput.click()">{{"browse" | translate}}</button>
+    </div>
+  </div>
+
+  <div class="successStatus" *ngIf="submitted">
+    <p class="successStatusText">Submitted successfully!</p>
+  </div>
+</div>

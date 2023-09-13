@@ -1,0 +1,50 @@
+<div class="container-main">
+  <div class="content">
+
+    <fieldset class="file-claim-container">
+        <legend class="file-claim-h3">{{"File a Claim" | translate }}</legend>
+
+        <form [formGroup]="claimFormGroup" class="form-fields">
+
+          <div class="container-one">
+            <mat-form-field appearance="fill" class="name-input">
+              <mat-label>{{ "plan" | translate }}</mat-label>
+              <mat-select  formControlName="package" name="package" type="object" (ngModelChange)="enableInput()">
+                <mat-option value="" disabled> Select a plan </mat-option>
+                <mat-option *ngFor="let pack of packages" [value]="pack._id"> {{pack.name}} </mat-option>
+              </mat-select>
+              <mat-error> {{"error-plans" | translate}} </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>{{ "date-Of-service" | translate }}</mat-label>
+              <input matInput [matDatepicker]="end" name="dateOfService" formControlName="dateOfService">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+              <mat-datepicker #end></mat-datepicker>
+              <mat-error> {{ "error-plan-end-date" | translate }} </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy" class="amount-input">
+              <mat-label>{{ "amount" | translate }}</mat-label>
+              <input  matInput type="number"  formControlName="amount" name="amount"/>
+              <mat-error> {{"error-amount" | translate}} </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="container-two">
+          <app-upload-receipt (changeFile)="fileChange($event)"></app-upload-receipt>
+        </div>
+      </form>
+
+    </fieldset>
+
+  </div>
+
+  <div class="btn-container">
+    <button class="cancel-plan-btn" routerLink=".."> {{ "cancel" | translate }}  </button>
+    <button class="submit-plan-btn" (click)="submit()"> {{ "submit" | translate }} </button>
+  </div>
+
+</div>
+
+

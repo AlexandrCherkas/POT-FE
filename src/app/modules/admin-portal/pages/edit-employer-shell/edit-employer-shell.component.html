@@ -1,0 +1,21 @@
+<div class="container-main">
+  <div class="container">
+    <div class="heading-container">
+      <ng-container *ngIf="employer">
+        <label class="heading">
+          {{ "employer-administration-for" | translate }}
+          {{ employer.companyName }}</label
+        >
+      </ng-container>
+      <button class="select-different-employer-btn" routerLink="/">
+        {{"select-different-employer" | translate}}
+      </button>
+    </div>
+
+    <app-add-new-employer
+      (employerFormGroupEmit)="onEmployerFormGroupEmit($event)"
+      (employerFormGroupSubmit)="editEmployer($event)"
+      [logoName]="logo"
+    ></app-add-new-employer>
+  </div>
+</div>

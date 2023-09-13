@@ -1,0 +1,17 @@
+<div class="admin-portal">
+  <div class="portal-title">
+    <div class="title-description">
+      <p class="title-description-main">{{"Home" | translate}}</p>
+      <p>{{"text-home-page" | translate }}</p>
+    </div>
+    <img src="{{ image }}" width="25%" />
+  </div>
+
+  <nav mat-tab-nav-bar [disableRipple]="true">
+    <a mat-tab-link routerLink="employers" [ngClass]="{'white' : colorEmployerBtn}">{{ "employer" | translate }} </a>
+    <a mat-tab-link routerLink="claims" [ngClass]="{'white' : colorClaimsBtn}">{{ "Claims" | translate }}</a>
+  </nav>
+
+    <router-outlet></router-outlet>
+
+</div>

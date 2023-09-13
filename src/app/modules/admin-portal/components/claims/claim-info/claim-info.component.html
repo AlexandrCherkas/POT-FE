@@ -1,0 +1,38 @@
+<div class="container-main">
+  <div class="content">
+
+    <ng-container *ngIf="claim">
+      <label>{{ "claimNumber" | translate }} : {{ claim.claimNumber }}</label>
+
+      <fieldset class="claim-details-container">
+        <legend class="claim-details-h3">{{ "details" | translate }}</legend>
+
+        <table class="claim-table-data">
+          <tr><td class="row-one">{{ "consumer" | translate }} :</td> <td class="row-two"> {{ claim.consumer.firstName }}</td></tr>
+          <tr><td class="row-one">{{ "phoneNumber" | translate }} :</td><td class="row-two">{{ claim.consumer.email }}</td></tr>
+          <tr><td class="row-one">{{ "dateOfService" | translate }}  :</td> <td class="row-two">{{ claim.serviceDate | formatData }}</td></tr>
+          <tr><td class="row-one">{{ "plan" | translate }} :</td><td class="row-two">{{ claim.package.name }}</td></tr>
+          <tr><td class="row-one">{{ "amount" | translate }} :</td><td class="row-two">{{ claim.amount }}</td></tr>
+        </table>
+
+        <div class="receipt-container" (click)="showReceipt()" >
+          <img *ngIf="receipt" class="logo"  [src]="'http://localhost:3000/file/' + receipt"  width="120px" alt="" />
+        </div>
+
+      </fieldset>
+  </ng-container>
+
+    <div class="btn-container-two">
+      <ng-container *ngIf="claimStatus">
+        <button class="cancel-claim-btn" (click)="cancel()"> {{ "cancel" | translate }}  </button>
+        <button class="approve-claim-btn" (click)="approveClaim()"> {{ "approve" | translate }}  </button>
+        <button class="deny-claim-btn" (click)="denyClaim()"> {{ "deny" | translate }} </button>
+      </ng-container>
+
+      <ng-container *ngIf="!claimStatus">
+        <button class="cancel-claim-btn" (click)="cancel()"> {{ "cancel" | translate }}  </button>
+      </ng-container>
+    </div>
+
+  </div>
+</div>

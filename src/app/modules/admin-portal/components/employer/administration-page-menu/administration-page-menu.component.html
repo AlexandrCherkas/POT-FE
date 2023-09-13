@@ -1,0 +1,27 @@
+<div class="container-main">
+  <div class="content">
+    <div class="heading-container">
+      <ng-container *ngIf="employer">
+        <label class="heading"> {{ "employer-administration-for" | translate }} {{employer.companyName}}</label>
+      </ng-container>
+        <button class="select-different-employer-btn" (click)="goToHomePage()">{{"select-different-employer" | translate}}</button>
+    </div>
+
+    <div class="menu-container">
+
+      <div class="employer-setup-container">
+        <label class="employer-setup-h2">{{"employer-setup" | translate}}</label>
+        <button class="manage-profile-btn" routerLink="edit">{{"manage-profile" | translate}}</button>
+        <button class="manage-users-btn" routerLink="employees">{{"manage-users" | translate}}</button>
+      </div>
+
+      <div class="plan-setup-container">
+        <label class="plan-setup-h2">{{"plan-setup" | translate}}</label>
+        <button class="manage-plans-btn" routerLink="plans">{{"manage-plans" | translate}}</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,23 @@
+<form class="form-search" [formGroup]="searchFormGroup" >
+
+  <mat-form-field appearance="legacy" class="claim-number-input">
+    <mat-label>{{ "claimNumber" | translate }}</mat-label>
+    <input  matInput type="text" name="claimNumber" formControlName="claimNumber" placeholder="Ex. Coherent"/>
+    <mat-error> {{"error-search-input-claimNumber" | translate}} </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" name="employerName" >
+    <mat-label>{{ "employer" | translate }}</mat-label>
+    <mat-select matNativeControl formControlName="employer" name="employersName" >
+      <mat-option value="" ></mat-option>
+      <mat-option *ngFor="let employer of employers" [value]="employer.companyID">
+        {{employer.companyName}}
+      </mat-option>
+    </mat-select>
+    <mat-error> {{"error-search-select-employer" | translate}} </mat-error>
+  </mat-form-field>
+
+</form>
+
+<button class="search-claim-btn" (click)="searchClaim()">{{ "search" | translate }}</button>
+

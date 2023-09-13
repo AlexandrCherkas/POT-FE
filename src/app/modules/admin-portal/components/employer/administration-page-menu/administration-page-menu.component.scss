@@ -1,0 +1,102 @@
+@import "constants.scss";
+
+h2 {
+  color: $white;
+  font-weight: 400;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+  margin-bottom: 5%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  margin-top: 3%;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid $white;
+  padding-bottom: 3%;
+}
+
+.heading {
+  display: flex;
+  color: $white;
+  align-items: center;
+  font-size: $font-size-page-headings;
+  font-weight: 400;
+}
+
+.select-different-employer-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: $add-employer-btn-height;
+  margin-left: auto;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  &:hover {
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 4%;
+}
+
+.employer-setup-container {
+  margin-right: 10%;
+}
+
+.employer-setup-container,
+.plan-setup-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.manage-profile-btn,
+.manage-users-btn,
+.manage-rules-btn,
+.manage-plans-btn {
+  cursor: pointer;
+  background-color: $white;
+  color: $secondary-blue;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: $add-employer-btn-height;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  margin-bottom: 4%;
+  &:hover {
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.employer-setup-h2,
+.plan-setup-h2 {
+  color: $white;
+  font-size: 1.2em;
+  margin-bottom: 5%;
+}

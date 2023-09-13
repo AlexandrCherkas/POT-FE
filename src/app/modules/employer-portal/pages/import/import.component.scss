@@ -1,0 +1,109 @@
+@import "../../../../../assets/styles/constants.scss";
+
+.navigation
+button:nth-child(1),
+button:nth-child(2),
+button:nth-child(4) {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  color: $primary-blue;
+  width: 26%;
+  padding: 3%;
+  width: 22%;
+  height: 35px;
+  padding: 1%;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-btns;
+  border: none;
+  border-radius: 10px;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  margin-top: 6%;
+  margin-bottom: 16%;
+  place-content: center;
+  width: 100%;
+}
+.inner-container {
+  display: flex;
+  align-self: center;
+  width: 75%;
+  margin-bottom: 4%;
+}
+.logo-text {
+  color: $white;
+  font-size: 20px;
+  margin: 0px;
+  margin-right: 3%;
+  font-weight: 500;
+  align-self: center;
+}
+.file-input {
+  display: flex;
+  place-content: space-between;
+  height: 30px;
+  width: 70%;
+}
+.display-file-input {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid $white;
+  color: white;
+  height: 19%;
+  margin-bottom: 2%;
+}
+.input-and-bottom-text {
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  width: 100%;
+}
+.bottom-text {
+  color: $white;
+  opacity: 0.5;
+  margin: 0;
+}
+.browse-btn {
+  background-color: $white;
+  color: $primary-blue;
+  border: none;
+  cursor: pointer;
+  margin-left: 5%;
+  width: 20%;
+  border-radius: $border-radius-small-btns;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.import-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-small-btns;
+  height: 25%;
+  width: 28%;
+  font-weight: bold;
+  margin-top: 3%;
+}
+
+.successStatus {
+  display: flex;
+  margin-top: 3%;
+  align-self: center;
+  margin-right: 41%;
+  color: $successStatusTextColor;
+}

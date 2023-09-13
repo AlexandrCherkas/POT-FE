@@ -1,0 +1,58 @@
+<button
+  mat-icon-button
+  class="update-employees-btn"
+  (click)="updateEmployees($event)"
+>
+  <mat-icon>update</mat-icon>
+</button>
+
+<div class="container mat-elevation-z8">
+  <div class="loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="employees" class="table"  matSort matSortActive="" matSortDisableClear matSortDirection="desc" >
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear> {{ "firstName" | translate }} </th>
+        <td mat-cell *matCellDef="let row" [routerLink]="row._id + '/edit'"> {{ row.firstName }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>{{ "lastName" | translate }}</th>
+        <td mat-cell *matCellDef="let row" [routerLink]="'employer/' + row._id"> {{ row.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ssn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear> SSN </th>
+        <td mat-cell *matCellDef="let row" [routerLink]="'employer/' + row._id"> {{ row.ssn | formatSSN}}  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="enrollments"> <th mat-header-cell *matHeaderCellDef> {{ "enrollments" | translate }} </th>
+        <td mat-cell *matCellDef="let row">
+          <button class="enrollment-btn" color="primary" (click)="goToEnrollments(row._id)">
+            {{ "enroll-or-update-enrollments" | translate }}
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>{{ "actions" | translate }}</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="delete-company-btn" (click)="deleteConsumer(row._id, row.firstName, row.lastName)">
+            {{"delete" | translate}}
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <mat-paginator
+    [length]="lengthEmployees"
+    [pageSize]="pageSize"
+    aria-label="Select page "
+  ></mat-paginator>
+</div>

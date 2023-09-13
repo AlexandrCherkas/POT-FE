@@ -1,0 +1,31 @@
+
+<div class="container-main">
+  <div class="content">
+
+    <fieldset class="search-criteria-container">
+      <legend class="search-criteria-h3">{{"search-criteria" | translate }}</legend>
+      <app-search-employees  (changeValueSearch)="searchEmployees($event)"></app-search-employees>
+    </fieldset>
+
+    <ng-container *ngIf="this.addConsumerPermissions">
+      <button class="add-employee-btn" routerLink="add" >{{"add-new-employee" | translate }}</button>
+    </ng-container>
+    <ng-container *ngIf="!this.addConsumerPermissions">
+      <button class="add-employee-disabled-btn" (click)="errorAdd()">{{"add-new-employee" | translate }}</button>
+    </ng-container>
+
+
+    <app-table-employees  [employees]="employees"  [amountEmployees]="amount$" [searchEvent]="searchEvent" ></app-table-employees>
+
+  </div>
+</div>
+
+<app-spinner
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+  [backdropEnabled]="true"
+  [positionGloballyCenter]="true"
+  [displayProgressSpinner]="displayProgressSpinner">
+</app-spinner>
+

@@ -1,0 +1,62 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+  margin-bottom: 5%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.add-employer-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 20%;
+  height: 30px;
+  margin-right: 3%;
+  align-self: self-end;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.search-criteria-container {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-bottom: 3%;
+  width: 95%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.search-criteria-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+

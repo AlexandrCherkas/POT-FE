@@ -1,0 +1,192 @@
+@import "constants.scss";
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 3%;
+  width: 80%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+}
+
+.inner-fieldset {
+  width: 100%;
+}
+
+.fieldset-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+.form-search {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-between;
+  width: 90%;
+  align-self: center;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.input-fields-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.security-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.permissions-container  {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+
+mat-form-field {
+  width: 44%;
+}
+
+mat-label {
+  color: $white-blue;
+}
+
+.mat-input-element {
+color: $white;
+}
+
+.logo-container {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  width: 25%;
+  margin-top: 5%;
+}
+
+.upload-logo-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.logo-text {
+  color: $white;
+  font-size: 20px;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.file-input {
+  display: flex;
+  width: 100%;
+  place-content: space-between;
+  height: 30px;
+}
+
+.permissions-slider {
+  color: $white;
+}
+
+.display-file-input {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid $white;
+  color: white;
+  width: 70%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  padding-right: 17px;
+  width: 85%;
+  align-self: center;
+}
+
+.cancel-btn {
+  margin-right: 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: $white;
+    color: $primary-blue;
+    border-radius: $border-radius-small-btns;
+    border: none;
+    width: 150px;
+    height: $add-employer-btn-height;
+    align-self: self-end;
+    font-weight: bold;
+    margin-top: 3%;
+    transition: $transform-btn-time;
+    &:hover{
+      transition: $transform-btn-time;
+      transform: $transform-btn-scale;
+    }
+  }
+
+.submit-btn, .cancel-btn{
+  background-color: $secondary-blue;
+  color: $white;
+}
+
+.mat-input-element{
+  color: $white;
+}
+
+::ng-deep.mat-input-element::placeholder{
+  color: $white-blue !important;
+}
+
+::ng-deep.mat-form-field-underline{
+  background-color: $white-blue !important;
+}
+
+::ng-deep.mat-form-field-ripple{
+  background-color: $white !important;
+}
+
+mat-label {
+  color: $white-blue;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  transition: background-color 5000s ease-in-out 0s;
+}

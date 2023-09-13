@@ -1,0 +1,155 @@
+@import "../../../../../assets/styles/constants.scss";
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-fieldset {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 2%;
+  width: 73%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+}
+
+.profile-fieldset-title {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+.employer-form {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: space-between;
+  width: 90%;
+  align-self: center;
+  margin-bottom: 3%;
+}
+
+.input-fields-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+
+mat-form-field {
+  width: 44%;
+}
+
+mat-label {
+  color: $white;
+}
+
+.logo {
+  width: 25%;
+}
+
+.upload-logo-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 2%;
+  width: 90%;
+}
+
+.logo-text {
+  color: $white;
+  font-size: 20px;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.file-input {
+  display: flex;
+  width: 80%;
+  place-content: space-between;
+  height: 30px;
+}
+
+.display-file-input {
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid $white;
+  color: white;
+  width: 80%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  padding-right: 17px;
+  width: 77%;
+  align-self: center;
+}
+
+.buttons button {
+  width: 150px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  margin-right: 25px;
+}
+
+.successStatus {
+  display: flex;
+  align-self: self-end;
+  margin-right: 13%;
+}
+
+.successStatusText {
+  margin-bottom: 0;
+  margin-top: 18%;
+  color: $successStatusTextColor;
+}
+
+.mat-input-element {
+  color: $white;
+}
+
+button {
+  cursor: pointer;
+  background-color: $white;
+  color: $primary-blue;
+  border-radius: 5px;
+  border: none;
+  width: 90px;
+  height: 30px;
+  align-self: flex-end;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: $white !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  -webkit-text-fill-color: $white;
+  transition: background-color 5000s ease-in-out 0s;
+}

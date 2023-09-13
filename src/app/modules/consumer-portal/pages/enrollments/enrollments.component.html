@@ -1,0 +1,45 @@
+
+<h4> {{ "active-enrollments" | translate }} </h4>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="plan">
+    <th mat-header-cell *matHeaderCellDef> {{ "plan" | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> {{ "type" | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="election">
+    <th mat-header-cell *matHeaderCellDef> {{ "election" | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{row.election | addCurrencySign }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="contribution">
+    <th mat-header-cell *matHeaderCellDef> {{ "contribution" | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{row.contribution | addCurrencySign }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="availableAmount">
+    <th mat-header-cell *matHeaderCellDef> {{ "availableAmount" | translate }} </th>
+    <td mat-cell *matCellDef="let row"> {{row.availableAmount | addCurrencySign }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>  {{ "actions" | translate }} </th>
+    <td mat-cell *matCellDef="let row">
+      <ng-container *ngIf="this.employerPermissions && this.consumerPermissions && this.row.isActive">
+        <button class="update-btn"  color="primary" (click)="addClaim(row)"> {{"file-a-claim" | translate}}  </button>
+      </ng-container>
+
+      <ng-container *ngIf="!this.employerPermissions || !this.consumerPermissions || !this.row.isActive">
+        <button class="update-disabled-btn"  color="primary" (click)="showError()"> {{"file-a-claim" | translate}}  </button>
+      </ng-container>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

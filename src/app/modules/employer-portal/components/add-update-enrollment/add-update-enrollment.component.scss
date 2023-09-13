@@ -1,0 +1,89 @@
+@import 'constants.scss';
+
+button{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: 13px;
+  border: none;
+  width: 120px;
+  height: 35px;
+  align-self: flex-end;
+  font-weight: bold;
+  margin-top: 5%;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  color: #024c63;
+
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+
+.actions-btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.submit-btn{
+  margin-left: 20%;
+}
+
+.mat-dialog-container{
+  color: #024c63;
+}
+
+.mat-input-element:disabled {
+  color: rgba(0,0,0,.3)
+}
+
+button{
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.contribution-input{
+  cursor: not-allowed;
+}
+.election-input, .name-input{
+  cursor: pointer;
+}
+
+.name-input:disabled{
+  cursor: not-allowed;
+}
+
+
+.mat-select-min-line{
+  color: black ;
+}
+
+mat-select{
+  color: black !important;
+}
+
+::ng-deep.mat-spec{
+  mat-option{
+    color: black ;
+  }
+  .mat-select-min-line{
+    color: black ;
+  }
+  color: black ;
+}

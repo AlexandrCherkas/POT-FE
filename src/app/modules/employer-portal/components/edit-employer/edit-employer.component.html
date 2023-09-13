@@ -1,0 +1,154 @@
+<div class="profile-container">
+    <fieldset class="profile-fieldset">
+      <legend class="profile-fieldset-title">{{"profile" | translate}}</legend>
+    
+      <form class="employer-form" [formGroup]="employerFormGroup">
+        <div class="input-fields-container">
+          <mat-form-field appearance="legacy" class="input employer-name-input">
+            <mat-label>{{"company-name" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Name"
+              type="text"
+              formControlName="companyName"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('companyName').hasError('required')"
+          >Please provide a company name!</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="legacy" class="input employer-name-input">
+            <mat-label>{{"username" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Username"
+              type="text"
+              formControlName="loginName"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('loginName').hasError('required')"
+          >Please provide a username!</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="legacy" class="input employer-password-input">
+            <mat-label>{{"password-label" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              formControlName="password"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('password').hasError('minlength')"
+          >Password needs to be at least 4 characters long!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-code-input">
+            <mat-label>Code</mat-label>
+            <input
+              matInput
+              placeholder="Code"
+              type="text"
+              formControlName="countryCode"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('countryCode').hasError('required')"
+          >Please provide a country code!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-street-input">
+            <mat-label>{{"street" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Street"
+              type="text"
+              formControlName="street"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('street').hasError('required')"
+          >Please provide name of street!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-city-input">
+            <mat-label>{{"city" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="City"
+              type="text"
+              formControlName="city"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('city').hasError('required')"
+          >Please provide name of city!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-state-input">
+            <mat-label>{{"state" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="State"
+              type="text"
+              formControlName="state"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('state').hasError('required')"
+          >Please provide name of state!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-zip-input">
+            <mat-label>{{"zip-code" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Zip Code"
+              type="number"
+              formControlName="zipCode"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('zipCode').hasError('required')"
+          >Please provide a zip code!</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field appearance="legacy" class="input employer-phone-input">
+            <mat-label>{{"phoneNumber" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Phone number"
+              type="number"
+              formControlName="phone"
+            />
+            <mat-error
+            *ngIf="employerFormGroup.get('phone').hasError('required')"
+          >Please provide a phone number!</mat-error>
+          </mat-form-field>
+        </div>
+
+          <img *ngIf="newFileName" class="logo" [src]="imageSrc || 'http://localhost:3000/file/' + newFileName" alt="">
+    
+        <div class="upload-logo-container">
+          <label class="logo-text">Logo</label>
+          <div class="file-input">
+            <input type="text" disabled class="display-file-input" value="{{ fileName }}" />
+            <input
+              (change)="fileChange($event)"
+              class="upload-logo-input"
+              type="file"
+              name="file"
+              id="file"
+              formControlName="logo"
+              style="display: none;"
+              #fileInput
+            />
+            <button (click)="fileInput.click()">{{"upload" | translate}}</button>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+    <div class="successStatus" *ngIf="submitted">
+      <p class="successStatusText">{{"success-status" | translate}}</p>
+    </div>
+    
+    <div class="buttons">
+      <button (click)="onCancel()" class="cancel-btn">{{"cancel" | translate}}</button>
+      <button (click)="onSubmit()">{{"submit" | translate}}</button>
+    </div>
+  </div>

@@ -1,0 +1,69 @@
+@import 'constants.scss';
+
+.mat-input-element{
+  color: $white;
+}
+
+::ng-deep.mat-input-element::placeholder{
+  color: $white-blue;
+}
+
+.form-search {
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  width: 80%;
+  margin-left: 3%;
+  align-self: center;
+}
+
+mat-form-field {
+  width: 44%;
+}
+
+mat-label {
+  color: $white-blue;
+}
+
+::ng-deep.mat-form-field-underline{
+  background-color: $white-blue !important;
+}
+
+::ng-deep.mat-form-field-ripple{
+  background-color: $white !important;
+}
+
+.search-employer-btn{
+  cursor: pointer;
+  background-color: $white ;
+  color:  $secondary-blue;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 16%;
+  height: 30px;
+  align-self:flex-start;
+  font-weight: bold;
+  margin-bottom: 1%;
+  margin-left: 3%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+
+
+mat-progress-spinner{
+  margin-left: 2%;
+  margin-top: 1%;
+  ::ng-deep circle {
+    stroke: $white;
+  }
+}
+
+@media all and (max-width: 500px){
+  .form-search {
+    flex-direction: column;
+  }
+}

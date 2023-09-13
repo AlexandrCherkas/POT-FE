@@ -1,0 +1,36 @@
+
+<div class="container-main">
+  <div class="content">
+
+    <fieldset class="search-criteria-container">
+        <legend class="search-criteria-h3">{{"search-criteria" | translate }}</legend>
+        <app-search-claim (changeValueSearch)="searchClaims($event)"></app-search-claim>
+    </fieldset>
+
+    <div class="container-filter">
+      <form [formGroup]="selectViewFormGroup">
+      <mat-form-field appearance="fill" name="selectView" >
+        <mat-label>{{"select-view" | translate}}</mat-label>
+        <mat-select formControlName="selectView" name="selectView" (ngModelChange)="changeStatusClaim()">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let status of statuses" [value]="status">
+            {{status}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    </div>
+
+
+    <app-claims-table [claims]="claims" [amountClaims]="amount$"  [searchEvent]="searchEvent" ></app-claims-table>
+  </div>
+</div>
+
+<app-spinner
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+  [backdropEnabled]="true"
+  [positionGloballyCenter]="true"
+  [displayProgressSpinner]="displayProgressSpinner">
+</app-spinner>

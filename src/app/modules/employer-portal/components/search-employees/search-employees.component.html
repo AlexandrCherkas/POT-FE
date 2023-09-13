@@ -1,0 +1,23 @@
+<form class="form-search" [formGroup]="searchFormGroup" novalidate >
+
+  <mat-form-field appearance="legacy" class="employee-firstName-input">
+    <mat-label> {{"label-search-input-firstEmployeeName" | translate}} </mat-label>
+    <input matInput type="text" name="employerName" formControlName="firstName"   placeholder="Ex. Jack"/>
+    <mat-error> {{"error-search-input-firstEmployeeName" | translate}} </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy" class="employee-lastName-input">
+    <mat-label> {{"label-search-input-lastEmployeeName" | translate}} </mat-label>
+    <input matInput type="text" name="employerCode" formControlName="lastName"   placeholder="Ex. Wilson" />
+    <mat-error> {{"error-search-input-lastEmployeeName" | translate}} </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy" class="employee-ssn-input">
+    <mat-label> SSN </mat-label>
+    <input matInput type="text" name="employerCode" formControlName="ssn"  placeholder="Ex. 123-45-6789" />
+    <mat-error> {{"error-search-input-ssnCode" | translate}} </mat-error>
+  </mat-form-field>
+
+</form>
+
+<button class="search-employees-btn" (click)="searchEmployee()">{{"search" | translate}}</button>

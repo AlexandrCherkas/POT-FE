@@ -1,0 +1,153 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  margin: 4% 0;
+}
+
+.container-title{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid $white;
+  padding-bottom: 3%;
+}
+
+.select-employer-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: $add-employer-btn-height;
+  margin-left: auto;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.add-new-plan-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  font-weight: bold;
+  width: 219px;
+  height: $add-employer-btn-height;
+  align-self: self-end;
+  margin-top: 3%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.rate-limit-reached {
+  max-width: 360px;
+  text-align: center;
+}
+
+.mat-header-row{
+  background-color: $secondary-blue ;
+}
+
+td{
+  color: #00546F;
+  font-size: 16px
+}
+
+th, tr{
+  color: $white;
+  font-size: 16px
+}
+
+tr.mat-row{
+  height: $table-tr-height;
+  transition: $transform-btn-time;
+  &:hover {
+    transition: $transform-btn-time ;
+    background-color: wheat;
+  }
+}
+
+
+tr.mat-row{
+  height: $table-tr-height;
+}
+
+tr:nth-child(2n) {
+	background-color:$white-blue;
+}
+
+.title-ins-plans{
+  color: $white;
+  margin: 3%;
+}
+
+.label-employer-name{
+  display: flex;
+  color: $white;
+  align-items: center;
+  font-size: $font-size-page-headings;
+  font-weight: 400;
+}
+
+.mat-column-status {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+}
+.mat-column-planYear{
+  width: auto;
+  border-right: 2px solid $white;
+}
+.mat-column-actions{
+  width: auto;
+  text-align: center;
+}
+
+.Initialize-plan-btn, .remove-plan-btn, .update-plan-btn, .info-plan-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-small-btns;
+  border: none;
+  width: auto;
+  font-weight: bold;
+  height: 30px;
+  transition: $transform-btn-time;
+  margin-right:1% ;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.mat-column-type, .mat-column-isActive{
+  width: auto;
+  border-right: 2px solid $white;
+}
+
+.mat-column-isActive{
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}

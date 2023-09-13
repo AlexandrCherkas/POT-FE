@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 mat-dialog-title> {{"information" | translate}} </h2>
+
+  <div mat-dialog-content>
+    <p> <span>{{"plan" | translate }} : </span> {{ data.message.name}}</p>
+    <p> <span>{{"type" | translate }} :</span> {{ data.message.type}}</p>
+    <p> <span>{{"plan-start-date" | translate }} :</span> {{ data.message.startDate | formatData}}</p>
+    <p> <span>{{"plan-end-date" | translate }} :</span> {{ data.message.endDate | formatData}}</p>
+    <p> <span>{{"payroll-frequency" | translate }} :</span> {{ data.message.payrollFrequency}}</p>
+    <p> <span>{{"contribution" | translate }}</span> {{ data.message.contribution | addCurrencySign}}</p>
+  </div>
+
+  <button  (click)="onConfirmClick()" >{{"close" | translate}}</button>
+</div>

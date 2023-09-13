@@ -1,0 +1,246 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid $white;
+  border-radius: 15px;
+  opacity: 1 !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  margin: 4% 0;
+}
+
+.container-title {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2%;
+}
+
+.label-employer-name {
+  display: flex;
+  color: $white;
+  align-items: center;
+  display: flex;
+  font-size: $font-size-page-headings;
+  font-weight: 400;
+}
+
+.select-employer-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: $add-employer-btn-height;
+  margin-left: auto;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.general-container {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  margin-top: 12px;
+  margin-bottom: 3%;
+  width: 95%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+}
+
+.general-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+.container-date{
+  display: flex;
+  flex-direction: column;
+}
+
+.date-row{
+  width: 40%;
+  padding-left: 6%;
+}
+
+.payroll-row{
+  margin-left: auto;
+  width: 40%;
+}
+
+.date-error{
+  padding-top: 3%;
+  font-size: 0.8em;
+}
+
+::ng-deep.mat-form-field-ripple{
+  background-color: $white !important;
+}
+
+::ng-deep.mat-form-field-underline::before{
+  background-color: $white-blue !important;
+}
+
+mat-hint{
+  color: $white;
+}
+mat-label {
+  color: $white-blue;
+}
+
+::ng-deep.mat-select-value{
+  color: $white;
+}
+
+.mat-datepicker-input{
+  color: $white;
+}
+
+mat-datepicker-toggle{
+  color: $white;
+}
+
+mat-icon-button{
+  color: $white;
+}
+
+::ng-deep.mat-select-arrow{
+  color: $white;
+}
+.container-select-plan{
+  display: flex;
+  align-items: center;
+}
+
+.add-plan-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: auto;
+  padding: 1% 4%;
+  height: $add-employer-btn-height;
+  font-weight: bold;
+  margin-left: 2%;
+  margin-bottom: 15px ;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.mat-header-row{
+  background-color: $secondary-blue ;
+}
+
+td{
+  color: #00546F;
+  font-size: 18px
+}
+
+th, tr{
+  color: $white;
+  font-size: 18px
+}
+
+tr:nth-child(2n) {
+	background-color:$white-blue;
+}
+
+ .mat-column-type, .mat-column-contribution {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+}
+.mat-column-name{
+  width: auto;
+  border-right: 2px solid $white;
+}
+.mat-column-isActive{
+  width: auto;
+  text-align: center;
+}
+
+.btn-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-top: 3%;
+}
+
+.cancel-plan-btn{
+  margin-right: 3%;
+}
+
+.cancel-plan-btn, .submit-plan-btn {
+  cursor: pointer;
+  background-color: $white ;
+  color:  $secondary-blue;
+  border-radius: $border-radius-small-btns;
+  border: none;
+  width: 120px;
+  height: 37px;
+  align-self: flex-start;
+  font-weight: bold;
+  margin-bottom: 1%;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.update-plan-btn{
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+ .edit-plan-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-small-btns;
+  border: none;
+  width: auto;
+  height: 30px;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  margin-right:1%;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+ button:disabled{
+  cursor: not-allowed;
+  transform: scale(1);
+  background-color: $secondary-blue-transparent
+}
+
+::ng-deep.mat-select-disabled .mat-select-value{
+  color: $white-blue;
+}

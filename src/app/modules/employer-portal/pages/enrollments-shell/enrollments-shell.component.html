@@ -1,0 +1,61 @@
+<div class="container-main">
+  <div class="content">
+
+    <fieldset class="enrollments-container">
+      <legend class="enrollments-h3">{{"enrollments" | translate }}</legend>
+
+      <div class="addition-container">
+
+        <ng-container *ngIf="this.consumer">
+          <div class="consumer-info">
+            <div> Consumer: {{this.consumer.firstName}} {{this.consumer.lastName}}</div>
+            <div> Current balance: {{this.consumer.balance}}</div>
+          </div>
+        </ng-container>
+
+        <button class="add-employee-btn" (click)="addEnrollment()">{{"add-new-enrollment" | translate }}</button>
+
+      </div>
+
+      <button mat-icon-button class="update-enrollment-table-btn" (click)="updateEnrollments()">
+        <mat-icon>update</mat-icon>
+      </button>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="plan">
+          <th mat-header-cell *matHeaderCellDef> {{ "plan" | translate }} </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="election">
+          <th mat-header-cell *matHeaderCellDef> {{ "election" | translate }} </th>
+          <td mat-cell *matCellDef="let row"> {{row.election | addCurrencySign }} </td>
+        </ng-container>
+        <ng-container matColumnDef="contribution">
+          <th mat-header-cell *matHeaderCellDef> {{ "contribution" | translate }} </th>
+          <td mat-cell *matCellDef="let row"> {{row.contribution | addCurrencySign }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>  {{ "actions" | translate }} </th>
+          <td mat-cell *matCellDef="let row">
+            <button class="update-btn"  color="primary" (click)="update(row._id)">
+            {{"update" | translate}}  </button>  </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+    </fieldset>
+
+  </div>
+</div>
+
+<app-spinner
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+  [backdropEnabled]="true"
+  [positionGloballyCenter]="true"
+  [displayProgressSpinner]="displayProgressSpinner">
+</app-spinner>

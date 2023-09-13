@@ -1,0 +1,25 @@
+<div class="admin-portal">
+  <div class="portal-title">
+    <div class="title-description">
+      <p class="title-description-main">{{"Welcome" | translate}}, {{firstName}} {{lastName}} </p>
+      <p>{{"text-home-page" | translate }}</p>
+
+      <nav mat-tab-nav-bar >
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(value)]="selected.select" >
+          <mat-button-toggle value="home" routerLink="home">{{ "Home" | translate }} </mat-button-toggle>
+          <mat-button-toggle value="enrollments" routerLink="enrollments" >{{ "Enrollments" | translate }}</mat-button-toggle>
+          <mat-button-toggle value="claims" routerLink="claims">{{ "Claims" | translate }}</mat-button-toggle>
+        </mat-button-toggle-group>
+      </nav>
+
+    </div>
+
+    <img class="home-image" src="{{ homeImage }}" width="25%" />
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
+
+
+
+

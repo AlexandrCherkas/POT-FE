@@ -1,0 +1,151 @@
+@import 'constants.scss';
+
+.add-claim-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: 44px;
+  align-self: self-end;
+  font-weight: bold;
+  font: inherit;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+  margin-left: auto;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+.add-claim-disables-btn{
+  cursor: not-allowed;
+  color: $white;
+  background-color: $secondary-blue-transparent;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: 44px;
+  align-self: self-end;
+  font-weight: bold;
+  font: inherit;
+  margin-left: auto;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+mat-paginator {
+  border: none;
+  box-shadow: none !important;
+  background-color: transparent;
+}
+
+::ng-deep .mat-paginator-outer-container{
+  border: none;
+  background-color: transparent;
+}
+
+.container {
+  position: relative;
+  margin-bottom: 6%;
+}
+
+.table-container {
+  position: relative;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .mat-header-row{
+  background-color: $secondary-blue ;
+}
+
+td{
+  color: #00546F;
+  font-size: 16px
+}
+th, tr{
+  color: $white;
+  font-size: 16px
+}
+
+tr:nth-child(2n) {
+	background-color:$white-blue;
+}
+
+mat-paginator{
+  color: $white;
+  font-size: 15px;
+}
+
+.mat-button-wrapper{
+  color: $white;
+}
+
+::ng-deep .mat-button-wrapper{
+  color: $white;
+}
+
+::ng-deep .mat-select-arrow{
+  color: $white;
+}
+::ng-deep .mat-select-min-line{
+  color: $white;
+}
+::ng-deep .mat-sort-header-arrow{
+  color: $white;
+}
+
+.mat-column-serviceDate,
+.mat-column-plan,
+.mat-column-amount {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}
+
+.mat-column-claimNumber{
+  width: auto;
+  border-right: 2px solid $white;
+}
+
+.mat-column-status{
+  width: auto;
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}
+
+.status-approved{
+  color: green;
+}
+
+.status-deny{
+  color: red;
+}
+.status-pending{
+  color: rgb(0, 140, 255);
+}

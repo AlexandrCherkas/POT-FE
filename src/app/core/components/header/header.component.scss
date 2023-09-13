@@ -1,0 +1,81 @@
+@import 'constants.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+  margin: 1% 5%;
+
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+}
+
+.logo-image{
+  width: 32.02px;
+  height: 32.02px;
+  background: $white;
+  border-radius: 7px;
+}
+
+.logo-text{
+  display: block;
+  font-weight: 500;
+  font-size: 26px;
+  color: $white;
+  margin: 0 10px;
+}
+
+.container{
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.header-userName{
+  margin-left: auto;
+  margin-right: 30px;
+}
+.header-user-image{
+  border: 1px solid transparent;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%; ;
+  margin: 0 10px;
+}
+
+.user-name {
+  margin-right: 10px;
+  color: $white;
+  font-weight: 350;
+  font-size: 20px;
+}
+
+.user-btn{
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.btn{
+ font-weight: bold;
+ text-transform: uppercase
+}
+
+.language-btn{
+  color: $white;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}

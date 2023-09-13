@@ -1,0 +1,99 @@
+<fieldset class="user-information-container">
+  <legend class="user-information-h3">{{"user-information" | translate}}</legend>
+
+  <form class="form-add" [formGroup]="employeeFormGroup">
+    <div class="input-fields-container">
+      <mat-form-field appearance="legacy" class="input">
+        <mat-label>{{"firstName" | translate}}</mat-label>
+        <input matInput placeholder="Ex. Nick" type="text" formControlName="firstName"
+        />
+        <mat-error *ngIf="employeeFormGroup.get('firstName').hasError('required')"
+          >{{"error-search-input-firstEmployeeName" | translate}}</mat-error> </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="input">
+        <mat-label>{{"label-search-input-lastEmployeeName" | translate}}</mat-label>
+        <input matInput placeholder="Ex. Jonson" type="text"formControlName="lastName"/>
+        <mat-error *ngIf="employeeFormGroup.get('lastName').hasError('required')"
+          >{{"error-search-input-lastEmployeeName" | translate}}</mat-error> </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Ex. nick.jonson@email.com" type="text" formControlName="email" />
+        <mat-error *ngIf="employeeFormGroup.get('email').hasError('required')">{{"email-required" | translate}}</mat-error
+        >
+        <mat-error *ngIf="employeeFormGroup.get('email').hasError('email')"
+          >{{"valid-email" | translate}}</mat-error> </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="input">
+        <mat-label>{{"balance" | translate}}</mat-label>
+        <input matInput placeholder="Ex. 1000" type="number"formControlName="balance"/>
+        <mat-error *ngIf="employeeFormGroup.get('balance').hasError('required')"
+          >{{"balance-required" | translate}}</mat-error> </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="input">
+        <mat-label>SSN</mat-label>
+        <input matInput placeholder="000-00-000" type="text" formControlName="ssn" />
+        <mat-error *ngIf="employeeFormGroup.get('ssn').hasError('required')"
+          >{{"ssn-required" | translate}}</mat-error
+        >
+        <mat-error *ngIf="employeeFormGroup.get('ssn').hasError('pattern')"
+          >{{"ssn-only-nums" | translate}}</mat-error
+        >
+        <mat-error
+          *ngIf="employeeFormGroup.get('ssn').hasError('minlength') ||
+            employeeFormGroup.get('ssn').hasError('maxlength')">{{"ssn-characters" | translate}}</mat-error
+        >
+      </mat-form-field>
+
+      <fieldset class="user-information-container inner-fieldset">
+        <legend class="user-information-h3">{{"security" | translate}}</legend>
+        <div class="security-container">
+          <mat-form-field appearance="legacy" class="input">
+            <mat-label>{{"username" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Ex. nickJonson"
+              type="text"
+              formControlName="loginName"
+            />
+            <mat-error
+              *ngIf="employeeFormGroup.get('loginName').hasError('required')"
+              >{{"username-required" | translate}}</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="legacy" class="input">
+            <mat-label>{{"password" | translate}}</mat-label>
+            <input
+              matInput
+              placeholder="Ex. nick1234 "
+              type="password"
+              formControlName="password"
+              autocomplete="new-password"
+            />
+            <mat-error
+              *ngIf="employeeFormGroup.get('password').hasError('required')"
+              >{{"password-error" | translate}}</mat-error
+            >
+            <mat-error
+              *ngIf="employeeFormGroup.get('password').hasError('minlength')"
+              >{{"password-error-symbols" | translate}}</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </fieldset>
+
+      <fieldset class="user-information-container inner-fieldset">
+        <legend class="user-information-h3">{{"permissions" | translate}}</legend>
+        <mat-slide-toggle
+            class="permissions-slider"
+            formControlName="canFillClaims"
+            >{{"can-fill-claims" | translate}}</mat-slide-toggle
+          >
+      </fieldset>
+    </div>
+  </form>
+  <div class="buttons-container">
+    <button class="add-button" (click)="onSubmit()">{{"submit" | translate}}</button>
+    <button class="add-button" routerLink="../../">{{"cancel" | translate}}</button>
+  </div>
+</fieldset>

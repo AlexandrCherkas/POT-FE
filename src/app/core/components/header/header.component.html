@@ -1,0 +1,29 @@
+<header>
+  <div class="logo">
+    <div class="logo-image"></div>
+    <p class="logo-text">LOGO</p>
+  </div>
+
+  <ng-container *ngIf="authService.isAuthenticated()">
+
+    <div class="container">
+
+      <button mat-button [matMenuTriggerFor]="menu" class="language-btn"><mat-icon>language </mat-icon> {{language? "FR":"EN"}} </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="btn" (click)="changeLanguage()"> ENGLISH </button>
+        <button mat-menu-item class="btn" (click)="changeLanguage()"> FRENCH </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="menuMain" class="user-btn">
+         <img src="../../../../assets/images/1024px-Hamburger_icon_white.svg.png" width="30px" alt="logo">
+      </button>
+
+      <mat-menu #menuMain="matMenu">
+        <button mat-menu-item class="btn" routerLink="employer"> {{ "home-page" | translate }} </button>
+        <button mat-menu-item class="btn" (click)="logOut()"> {{ "logout" | translate }}</button>
+      </mat-menu>
+    </div>
+  </ng-container>
+</header>
+
+<router-outlet></router-outlet>

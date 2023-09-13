@@ -1,0 +1,31 @@
+<div class="login-shell">
+
+  <form [formGroup]="loginFormGroup" novalidate (submit)="submit()">
+
+    <div class="login-page-logo" >
+      <app-logo></app-logo>
+      <p>{{ "login-phrase" | translate }}</p>
+    </div>
+
+    <mat-form-field  appearance="fill" >
+      <mat-label>{{"login" | translate  }}</mat-label>
+      <input matInput type="text" name="username" formControlName="loginName" placeholder="Ex. Nick"/>
+      <mat-error> {{"login-error" | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{"password" | translate }}</mat-label>
+      <input matInput name="password" formControlName="password" [type]="hide ? 'password' : 'text'"   >
+      <mat-error> {{ "password-error" | translate}}</mat-error>
+      <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"  class="button-hide-pass">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-error class="error" *ngIf="error">{{error}}</mat-error>
+
+    <button mat-stroked-button  type="submit" class="buttom-login"> <span class="buttom-text">{{"login" | translate}}</span></button>
+
+  </form>
+
+</div>

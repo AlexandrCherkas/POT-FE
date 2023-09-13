@@ -1,0 +1,66 @@
+
+<ng-container *ngIf="this.employerPermissions && this.consumerPermissions">
+  <button mat-icon-button class="add-claim-btn" (click)="addClaim()"> {{ "file-a-claim" | translate }} </button>
+</ng-container>
+
+<ng-container *ngIf="!this.employerPermissions || !this.consumerPermissions">
+  <button mat-icon-button class="add-claim-disables-btn" (click)="showError()"> {{ "file-a-claim" | translate }} </button>
+</ng-container>
+
+
+<div class="container mat-elevation-z8">
+  <div class="loading-shade" *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="claims" class="table" matSort matSortActive="" matSortDisableClear matSortDirection="desc">
+
+      <ng-container matColumnDef="claimNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>{{ "claimNumber" | translate }}</th>
+        <td mat-cell *matCellDef="let row"> {{ row.claimNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="serviceDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>{{ "date-Of-service" | translate }}</th>
+        <td mat-cell *matCellDef="let row">{{ row.serviceDate | formatData}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="plan">
+        <th mat-header-cell *matHeaderCellDef>{{ "plan" | translate }}</th>
+        <td mat-cell *matCellDef="let row" > {{ row.package.type }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>{{ "amount" | translate }}</th>
+        <td mat-cell *matCellDef="let row">{{ row.amount | formatCurrency }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>{{ "status" | translate }}</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngIf="row.isApproved">
+            <div class="status-approved"> {{ row.isApproved | claimStatus}}</div>
+          </ng-container>
+          <ng-container *ngIf="row.isApproved == null">
+            <div class="status-pending"> {{ row.isApproved | claimStatus}}</div>
+          </ng-container>
+          <ng-container *ngIf="row.isApproved == false">
+            <div class="status-deny"> {{ row.isApproved | claimStatus}}</div>
+          </ng-container>
+
+         </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <mat-paginator
+    [length]="lengthClaim"
+    [pageSize]="pageSize"
+    aria-label="Select page "
+  ></mat-paginator>
+
+</div>

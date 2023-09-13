@@ -1,0 +1,24 @@
+<div class="container-main">
+  <div class="content">
+    <button class="add-employer-btn" routerLink="add">{{"add-new-employer" | translate }}</button>
+
+    <fieldset class="search-criteria-container">
+      <legend class="search-criteria-h3">{{"search-criteria" | translate }}</legend>
+      <app-search-employers   (changeValueSearch)="searchEmployers($event)"></app-search-employers>
+    </fieldset>
+
+    <app-employers-table  [employers]="employers" [amountEmployers]="amount$"  [searchEvent]="searchEvent"></app-employers-table>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<app-spinner
+  [color]="color"
+  [mode]="mode"
+  [value]="value"
+  [backdropEnabled]="true"
+  [positionGloballyCenter]="true"
+  [displayProgressSpinner]="displayProgressSpinner">
+</app-spinner>

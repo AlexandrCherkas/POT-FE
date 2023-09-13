@@ -1,0 +1,156 @@
+@import 'constants.scss';
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 1 !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 88%;
+  margin-top: 20px;
+}
+
+.add-employee-btn {
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 219px;
+  height: 35px;
+  align-self: self-end;
+  margin-left: auto;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.enrollments-container {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-bottom: 3%;
+  width: 95%;
+  border: 3px solid $white;
+  border-radius: 14px;
+  opacity: 1 !important;
+  padding: 3% 5% 5% 5% ;
+
+}
+
+.addition-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.consumer-info{
+  display: flex;
+  flex-direction: column;
+  color: $white;
+}
+
+
+.enrollments-h3 {
+  color: $white;
+  font-size: $font-size-container-headings;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 27px;
+  position: relative;
+  left: 10px;
+}
+
+app-table-enrollments{
+  padding-top: 3%;
+}
+
+table{
+  width: 100%;
+}
+
+.rate-limit-reached {
+  max-width: 360px;
+  text-align: center;
+}
+
+.mat-header-row{
+  background-color: $secondary-blue ;
+}
+
+td{
+  color: #00546F;
+  font-size: 16px
+}
+
+th, tr{
+  color: $white;
+  font-size: 16px
+}
+
+tr:nth-child(2n) {
+	background-color:$white-blue;
+}
+
+.title-ins-plans{
+  color: $white;
+  margin: 3%;
+}
+
+.mat-column-plan {
+  width: auto;
+  border-right: 2px solid $white;
+}
+.mat-column-election {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+}
+
+.mat-column-contribution {
+  width: auto;
+  border-right: 2px solid $white;
+  text-align: center;
+}
+
+.mat-column-action{
+  text-align: center;
+  ::ng-deep.mat-sort-header-container{
+    justify-content: center;
+  }
+}
+
+.update-btn{
+  cursor: pointer;
+  background-color: $secondary-blue;
+  color: $white;
+  border-radius: $border-radius-small-btns;
+  border: none;
+  width: auto;
+  height: 30px;
+  font-weight: bold;
+  transition: $transform-btn-time;
+  margin-right:1% ;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+
+.update-enrollment-table-btn{
+  display: flex;
+  margin-left: auto;
+  margin-top: 2%;
+  ::ng-deep .mat-button-wrapper{
+    color: $white;
+  }
+}
+

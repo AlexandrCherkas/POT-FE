@@ -1,0 +1,79 @@
+@import 'constants.scss';
+
+.login-shell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 610px;
+  height: 432px;
+  background: #d9d9d959;
+  border-radius: 17px;
+}
+
+.login-page-logo{
+  width: 54%;
+  margin-bottom: 5%;
+}
+
+.error {
+  margin-bottom: 3%;
+  color: red;
+}
+
+mat-form-field{
+  width: 54%;
+}
+
+mat-label, .button-hide-pass{
+  color:#F5F5F5;
+}
+mat-error, input{
+  color: #fce3e3;
+}
+.mat-input-element::placeholder{
+  color:#f8f8ff ;
+}
+
+.buttom-login{
+  width: 54%;
+  height: 44px;
+  background: #00546F;
+  border-radius: 11px;
+  margin-top: 25px;
+}
+
+.buttom-text{
+  color:  $white ;
+}
+
+p{
+  font-size: 14px;
+  color: $white
+}
+
+input {
+  -webkit-text-fill-color: $white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::ng-deep .mat-slide-toggle-content{
+  color:$white
+}
+
+.language-btn{
+  color: $white;
+  transition: $transform-btn-time;
+  &:hover{
+    transition: $transform-btn-time;
+    transform: $transform-btn-scale;
+  }
+}
+

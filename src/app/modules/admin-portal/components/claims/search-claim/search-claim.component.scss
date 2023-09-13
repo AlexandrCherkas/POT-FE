@@ -1,0 +1,84 @@
+@import 'constants.scss';
+
+.mat-input-element{
+  color: $white;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+}
+::ng-deep .mat-form-field-subscript-wrapper {
+  color: $white ;
+}
+
+.mat-input-element::placeholder{
+  color: $white ;
+}
+
+option{
+  color: $primary-blue;
+}
+
+.form-search {
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+  width: 80%;
+  align-self: center;
+  margin-left: 3%;
+}
+
+mat-form-field {
+  width: 44%;
+}
+
+mat-label {
+  color: $white-blue;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: $white !important;
+}
+
+.search-claim-btn{
+  cursor: pointer;
+  background-color: $white ;
+  color:  $secondary-blue;
+  border-radius: $border-radius-btns;
+  border: none;
+  width: 16%;
+  height: 30px;
+  margin-left: 3%;
+  margin-bottom: 1%;
+  align-self: flex-start;
+  font-weight: bold;
+  transition: $transform-btn-time;
+}
+
+.search-claim-btn:hover{
+  transition: $transform-btn-time;
+  transform: $transform-btn-scale;
+}
+
+mat-progress-spinner{
+  margin-left: 2%;
+  margin-top: 1%;
+  ::ng-deep circle {
+    stroke: $white;
+  }
+}
+
+::ng-deep .mat-form-field-underline::before{
+  background-color: $white !important;
+}
+::ng-deep .mat-form-field-ripple{
+  background-color: $white !important;
+}
+
+::ng-deep .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
+  color: $white;
+}
+
+.claim-number-input{
+  padding-top: 14px;
+}

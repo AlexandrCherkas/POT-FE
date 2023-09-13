@@ -1,0 +1,206 @@
+<div class="container-main">
+  <fieldset class="fieldset">
+    <legend class="fieldset-h3">{{"profile" | translate}}</legend>
+    <form class="form-search" [formGroup]="addEmployerFormGroup">
+      <div class="input-fields-container">
+        <mat-form-field appearance="legacy" class="input employer-name-input">
+          <mat-label>{{"company-name" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="Ex. Amazon "
+            type="text"
+            formControlName="companyName"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('companyName').hasError('required')"
+          >
+            {{"company-name-required" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-code-input">
+          <mat-label>Code</mat-label>
+          <input
+            matInput
+            placeholder="Ex. US"
+            type="text"
+            formControlName="countryCode"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('countryCode').hasError('required')"
+            >{{"country-code-required" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-street-input">
+          <mat-label>{{"street" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="Ex. Terry Avenue North Seattle"
+            type="text"
+            formControlName="street"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('street').hasError('required')"
+            >{{"street-required" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-city-input">
+          <mat-label>{{"city" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="Ex. New York"
+            type="text"
+            formControlName="city"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('city').hasError('required')"
+            >{{"city-required" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-state-input">
+          <mat-label>{{"state" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="Ex. New York"
+            type="text"
+            formControlName="state"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('state').hasError('required')"
+            >{{"state-required" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-zip-input">
+          <mat-label>{{"zip-code" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="10001"
+            type="text"
+            formControlName="zipCode"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('zipCode').hasError('required')"
+            >{{"zip-code-required" | translate}}</mat-error
+          >
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('zipCode').hasError('maxlength')"
+            >{{"zip-error-symbols" | translate}}</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" class="input employer-phone-input">
+          <mat-label>{{"phoneNumber" | translate}}</mat-label>
+          <input
+            matInput
+            placeholder="+1 007 123 567"
+            type="number"
+            formControlName="phone"
+          />
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('phone').hasError('required')"
+            >{{"phone-required" | translate}}</mat-error
+          >
+          <mat-error
+            *ngIf="addEmployerFormGroup.get('phone').hasError('maxlength')"
+            >{{"phone-error-symbols" | translate}}</mat-error
+          >
+        </mat-form-field>
+        <fieldset class="fieldset inner-fieldset">
+          <legend class="fieldset-h3">{{"security" | translate}}</legend>
+          <div class="security-container">
+            <mat-form-field appearance="legacy" class="input employer-name-input">
+              <mat-label>{{"username" | translate}}</mat-label>
+              <input
+                matInput
+                placeholder="Ex. AmazonCompany"
+                type="text"
+                formControlName="loginName"
+              />
+              <mat-error
+                *ngIf="addEmployerFormGroup.get('loginName').hasError('required')"
+                >{{"username-required" | translate}}</mat-error
+              >
+            </mat-form-field>
+
+            <mat-form-field
+              appearance="legacy"
+              class="input employer-password-input"
+            >
+              <mat-label>{{"password" | translate}}</mat-label>
+              <input
+                matInput
+                placeholder="Ex. amazon1234"
+                type="password"
+                formControlName="password"
+                autocomplete="new-password"
+              />
+              <mat-error
+                *ngIf="addEmployerFormGroup.get('password').hasError('required')"
+                >{{"password-error" | translate}}</mat-error
+              >
+              <mat-error
+                *ngIf="addEmployerFormGroup.get('password').hasError('minlength')"
+                >{{"password-error-symbols" | translate}}</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset inner-fieldset">
+          <legend class="fieldset-h3">{{"permissions" | translate}}</legend>
+          <div class="permissions-container">
+            <mat-slide-toggle
+            class="permissions-slider"
+            formControlName="canFillClaims"
+            >{{"can-fill-claims" | translate}}</mat-slide-toggle
+          >
+          <mat-slide-toggle
+            class="permissions-slider"
+            formControlName="canAddConsumers"
+            >{{"can-add-consumers" | translate}}</mat-slide-toggle
+          >
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="logo-container">
+        <img
+          *ngIf="logoName"
+          class="logo"
+          [src]="imageSrc || 'http://localhost:3000/file/' + logoName"
+          alt=""
+        />
+      </div>
+
+      <div class="upload-logo-container">
+        <label class="logo-text">Logo</label>
+        <div class="file-input">
+          <input
+            type="text"
+            disabled
+            class="display-file-input"
+            value="{{ fileName }}"
+          />
+          <input
+            (change)="fileChange($event)"
+            class="upload-logo-input"
+            type="file"
+            name="file"
+            id="file"
+            style="display: none"
+            #fileInput
+          />
+          <button (click)="fileInput.click()">{{"upload" | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+  <div class="buttons">
+    <button  routerLink=".." class="cancel-btn">{{"cancel" | translate}}</button>
+    <button class="submit-btn"type="submit" (click)="onSubmit()">{{"submit" | translate}}</button>
+  </div>
+</div>

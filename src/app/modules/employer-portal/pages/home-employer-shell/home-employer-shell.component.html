@@ -1,0 +1,31 @@
+<div class="employer-portal-shell">
+
+    <div class="portal-title">
+      <div class="title-description">
+        <p class="title-description-main">{{"Welcome" | translate}}, {{homeTitle}}</p>
+        <p>{{"text-home-page" | translate }}</p>
+      </div>
+      <img src="{{ image }}" width="25%" />
+    </div>
+
+    <nav class="navigation">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [value]="selected">
+        <mat-button-toggle value='home' routerLink="home">{{"Home" | translate}}</mat-button-toggle>
+        <mat-button-toggle value='employees' routerLink="employees">{{"employees" | translate}}</mat-button-toggle>
+        <mat-button-toggle value='import' routerLink="import">{{"import" | translate}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </nav>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+
+
+
+
+
+
+
+
+

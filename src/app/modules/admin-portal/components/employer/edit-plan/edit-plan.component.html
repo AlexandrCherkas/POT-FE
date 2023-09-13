@@ -1,0 +1,50 @@
+<div class="container-main">
+  <div class="content">
+
+    <div class="container-title">
+      <ng-container *ngIf="employerName">
+        <label class="label-employer-name"> {{ "employer-administration-for" | translate }} {{employerName}}</label>
+      </ng-container>
+      <button class="select-employer-btn" (click)="redirectToEmployer()">{{ "select-different-employer" | translate }}</button>
+    </div>
+
+    <table class="container-date" [formGroup]="editFormGroup" novalidate>
+
+      <fieldset class="general-container">
+        <legend class="general-h3">{{"general" | translate }}</legend>
+
+        <mat-form-field class="input-name-plan" appearance="fill">
+          <mat-label >{{ "name" | translate }}</mat-label>
+          <input matInput formControlName="name" type="string">
+          <mat-error *ngIf="editFormGroup.controls['name'].errors?.['required']"> {{ "error-name" | translate }} </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="input-type-plan" appearance="fill" >
+          <mat-label >{{ "type" | translate }}</mat-label>
+          <input matInput formControlName="type" type="string">
+        </mat-form-field>
+
+
+      </fieldset>
+
+      <fieldset class="contributions-container">
+        <legend class="contributions-h3">{{"contribution" | translate }}</legend>
+
+        <mat-form-field class="input-contribution" appearance="fill">
+          <mat-label>{{"contribution" | translate }}</mat-label>
+          <input matInput formControlName="contribution" type="number">
+          <mat-error *ngIf="editFormGroup.controls['contribution'].errors?.['required']"> {{ "error-contribution" | translate }}  </mat-error>
+        </mat-form-field>
+
+      </fieldset>
+    </table>
+
+
+    <div class="btn-container">
+      <button class="cancel-plan-btn" routerLink="../"> {{ "cancel" | translate }}  </button>
+      <button class="submit-plan-btn" (click)="submit()"> {{ "submit" | translate }} </button>
+    </div>
+
+  </div>
+</div>
